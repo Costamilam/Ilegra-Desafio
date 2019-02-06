@@ -1,6 +1,8 @@
 package reader;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.nio.file.StandardWatchEventKinds;
@@ -60,7 +62,7 @@ public class WatchDir {
     /**
      * Process all events for keys queued to the watcher
      */
-    void processEvents() {
+    void processEvents(Method callbackCreate, Method callbackUpdate, Method callbackDelete) throws IllegalAccessException, InvocationTargetException {
         while (true) {
             // wait for key to be signalled
             WatchKey key;
@@ -95,12 +97,19 @@ public class WatchDir {
                 Path child = dir.resolve(name);
 
                 // print out event
-                System.out.format("%s: %s\n", event.kind().name(), child);
+                System.out.format("%s: %s\n", kind.name(), child);
+
+                if (kind == StandardWatchEventKinds.ENTRY_CREATE) {
+                    callbackCreate.invoke(null, child.toFile());
+                } else if (kind == StandardWatchEventKinds.ENTRY_MODIFY) {
+                    callbackUpdate.invoke(null, child.toFile());
+                } else if (kind == StandardWatchEventKinds.ENTRY_DELETE) {
+                    callbackDelete.invoke(null, child.toFile());
+                }
             }
 
             // reset key and remove from set if directory no longer accessible
-            boolean valid = key.reset();
-            if (!valid) {
+            if (!key.reset()) {
                 keys.remove(key);
 
                 // all directories are inaccessible
