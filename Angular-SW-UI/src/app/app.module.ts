@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 //Components
 import { AppComponent } from './app.component';
@@ -10,6 +10,9 @@ import { AppRoutingModule } from './app-routing.module';
 
 //Services
 import { FilmService } from './services/film.service';
+
+//Interceptors
+import { UrlInterceptor } from './interceptors/url.interceptor';
 
 @NgModule({
     declarations: [
@@ -21,7 +24,12 @@ import { FilmService } from './services/film.service';
         AppRoutingModule,
     ],
     providers: [
-        FilmService
+        FilmService,
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: UrlInterceptor,
+            multi: true
+        }
     ],
     bootstrap: [AppComponent]
 })
