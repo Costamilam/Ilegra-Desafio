@@ -10,7 +10,7 @@ export class CharacterService {
 
     constructor(private http: HttpClient) { }
 
-    getCharacters(page: number): Observable<object> {
+    getCharacters(page: number = 1): Observable<object> {
         return this.http.get(`/people/?page=${page}`);
     }
 
