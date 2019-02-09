@@ -1,0 +1,10 @@
+article {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+}
+h1, h2 {
+    text-align: center;
+    line-height: 25vh;
+    color: #ffffff;
+}
