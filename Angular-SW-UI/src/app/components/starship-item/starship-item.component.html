@@ -1,0 +1,61 @@
+<article *ngIf="starship" class="tile is-ancestor is-vertical">
+    <app-menu [data]="starship"></app-menu>
+
+    <h1 class="title is-2 has-text-centered has-text-danger">{{ starship.name }}</h1>
+
+    <div class="tile is-parent">
+        <section class="tile is-vertical">
+            <p>
+                <span class="has-text-weight-bold">Model: </span>
+                <span>{{ starship.model }}</span>
+            </p>
+            <p>
+                <span class="has-text-weight-bold">Manufacturer: </span>
+                <span>{{ starship.manufacturer }}</span>
+            </p>
+            <p>
+                <span class="has-text-weight-bold">Class: </span>
+                <span>{{ starship.starship_class }}</span>
+            </p>
+            <p>
+                <span class="has-text-weight-bold">Mimimum Crew: </span>
+                <span>{{ starship.crew }}</span>
+            </p>
+            <p>
+                <span class="has-text-weight-bold">Passengers: </span>
+                <span>{{ starship.passengers }}</span>
+            </p>
+            <p>
+                <span class="has-text-weight-bold">Consumables: </span>
+                <span>{{ starship.consumables }}</span>
+            </p>
+        </section>
+
+        <section class="tile is-4 is-vertical">
+            <p>
+                <span class="has-text-weight-bold">Cost: </span>
+                <span>{{ starship.cost_in_credits }}</span>
+            </p>
+            <p>
+                <span class="has-text-weight-bold">Speed: </span>
+                <span>{{ starship.max_atmosphering_speed }}</span>
+            </p>
+            <p>
+                <span class="has-text-weight-bold">Hyperdrive Rating: </span>
+                <span>{{ starship.hyperdrive_rating }}</span>
+            </p>
+            <p>
+                <span class="has-text-weight-bold">MGLT: </span>
+                <span>{{ starship.MGLT }}</span>
+            </p>
+            <p>
+                <span class="has-text-weight-bold">Length: </span>
+                <span>{{ starship.length }}</span>
+            </p>
+            <p>
+                <span class="has-text-weight-bold">Cargo Capacity: </span>
+                <span>{{ starship.cargo_capacity }}</span>
+            </p>
+        </section>
+    </div>
+</article>
