@@ -1,0 +1,24 @@
+nav {
+    box-shadow: 0px 1px 5px #949292;
+    background-color: transparent;
+}
+.navbar-menu {
+    margin-right: 16px;
+}
+.navbar-menu a {
+    color: #3273dc;
+}
+.navbar-brand a {
+    color: #ffffff;
+}
+.navbar-menu,
+.navbar-menu:hover a {
+    background-color: transparent;
+}
+.navbar-menu a:hover {
+    background-color: transparent;
+    color: #ff3860;
+}
+.navbar-menu.active {
+    display: block;
+}
