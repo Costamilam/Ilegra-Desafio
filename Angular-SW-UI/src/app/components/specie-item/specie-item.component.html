@@ -1,0 +1,40 @@
+<article *ngIf="specie">
+    <app-menu [data]="specie"></app-menu>
+
+    <h1 class="title is-2 has-text-centered has-text-danger">{{ specie.name }}</h1>
+
+    <section >
+        <p>
+            <span class="has-text-weight-bold">Classification: </span>
+            <span>{{ specie.classification }}</span>
+        </p>
+        <p>
+            <span class="has-text-weight-bold">Designation: </span>
+            <span>{{ specie.designation }}</span>
+        </p>
+        <p>
+            <span class="has-text-weight-bold">Average Height: </span>
+            <span>{{ specie.average_height }}</span>
+        </p>
+        <p>
+            <span class="has-text-weight-bold">Skin Color: </span>
+            <span>{{ specie.skin_color }}</span>
+        </p>
+        <p>
+            <span class="has-text-weight-bold">Hair Color: </span>
+            <span>{{ specie.hair_color }}</span>
+        </p>
+        <p>
+            <span class="has-text-weight-bold">Eye Color: </span>
+            <span>{{ specie.eye_color }}</span>
+        </p>
+        <p>
+            <span class="has-text-weight-bold">Average Lifespan: </span>
+            <span>{{ specie.average_lifespan }}</span>
+        </p>
+        <p>
+            <span class="has-text-weight-bold">Language: </span>
+            <span>{{ specie.language }}</span>
+        </p>
+    </section>
+</article>
