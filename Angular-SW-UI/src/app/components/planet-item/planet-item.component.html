@@ -1,0 +1,40 @@
+<article *ngIf="planet" class="tile is-ancestor is-vertical">
+        <app-menu [data]="planet"></app-menu>
+    
+        <h1 class="title is-2 has-text-centered has-text-danger">{{ planet.name }}</h1>
+    
+        <section class="tile is-vertical">
+            <p>
+                <span class="has-text-weight-bold">Rotation Period: </span>
+                <span>{{ planet.rotation_period }}</span>
+            </p>
+            <p>
+                <span class="has-text-weight-bold">Orbital Period: </span>
+                <span>{{ planet.orbital_period }}</span>
+            </p>
+            <p>
+                <span class="has-text-weight-bold">Diameter: </span>
+                <span>{{ planet.diameter }}</span>
+            </p>
+            <p>
+                <span class="has-text-weight-bold">Climate: </span>
+                <span>{{ planet.climate }}</span>
+            </p>
+            <p>
+                <span class="has-text-weight-bold">Gravity: </span>
+                <span>{{ planet.gravity }}</span>
+            </p>
+            <p>
+                <span class="has-text-weight-bold">Terrain: </span>
+                <span>{{ planet.terrain }}</span>
+            </p>
+            <p>
+                <span class="has-text-weight-bold">Water: </span>
+                <span>{{ planet.surface_water }}</span>
+            </p>
+            <p>
+                <span class="has-text-weight-bold">population: </span>
+                <span>{{ planet.population }}</span>
+            </p>
+        </section>
+    </article>
