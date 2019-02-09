@@ -1,0 +1,5 @@
+<!-- <button (click)="films = sortByEpisode(films)">Sort by episode</button>
+
+<button (click)="films = sortByDate(films)">Sort by date</button> -->
+
+<app-film-item *ngFor="let film of films; index as i" [film]="film" [reverse]="i % 2"></app-film-item>
