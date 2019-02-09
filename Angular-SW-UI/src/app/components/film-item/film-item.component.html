@@ -1,0 +1,25 @@
+<article *ngIf="film" [ngClass]="{'reverse': reverse}" class="tile is-ancestor">
+    <section class="tile is-6 is-vertical">
+        <app-menu [data]="film"></app-menu>
+        
+        <h2 class="subtitle is-3 has-text-centered has-text-danger">Episode {{film.episode_id}}</h2>
+
+        <h1 class="title is-2 has-text-centered has-text-danger">{{ film.title }}</h1>
+
+        <p>
+            <span class="has-text-weight-bold">Directed by: </span>
+            <span>{{ film.director }}</span>
+        </p>
+
+        <p>
+            <span class="has-text-weight-bold">Produced by: </span>
+            <span>{{ film.producer }}</span>
+        </p>
+
+        <p class="has-text-centered">{{ film.release_date }}</p>
+    </section>
+
+    <section class="tile is-6">
+        <p class="has-text-justified">{{ film.opening_crawl }}</p>
+    </section>
+</article>
