@@ -1,0 +1,36 @@
+<article *ngIf="character" class="tile is-ancestor is-vertical">
+    <app-menu [data]="character"></app-menu>
+
+    <h1 class="title is-2 has-text-centered has-text-danger">{{ character.name }}</h1>
+
+    <section class="tile is-vertical">
+        <p>
+            <span class="has-text-weight-bold">Height: </span>
+            <span>{{ character.height }}</span>
+        </p>
+        <p>
+            <span class="has-text-weight-bold">Mass: </span>
+            <span>{{ character.mass }}</span>
+        </p>
+        <p>
+            <span class="has-text-weight-bold">Hair Color: </span>
+            <span>{{ character.hair_color }}</span>
+        </p>
+        <p>
+            <span class="has-text-weight-bold">Skin Color: </span>
+            <span>{{ character.skin_color }}</span>
+        </p>
+        <p>
+            <span class="has-text-weight-bold">Eye Color: </span>
+            <span>{{ character.eye_color }}</span>
+        </p>
+        <p>
+            <span class="has-text-weight-bold">Birth Year: </span>
+            <span>{{ character.birth_year }}</span>
+        </p>
+        <p>
+            <span class="has-text-weight-bold">Gender: </span>
+            <span>{{ character.gender }}</span>
+        </p>
+    </section>
+</article>
