@@ -1,0 +1,19 @@
+<nav *ngIf="pagination.current !== undefined" class="pagination is-rounded is-large">
+    <ul class="pagination-list">
+        <li>
+            <a class="pagination-link" [routerLink]="'/' + pagination.prefix + '/page/' + pagination.first">FIRST</a>
+        </li>
+        <li *ngIf="pagination.prev !== null">
+            <a class="pagination-link" [routerLink]="'/' + pagination.prefix + '/page/' + pagination.prev">{{ pagination.prev }}</a>
+        </li>
+        <li>
+            <span class="pagination-link is-current">{{ pagination.current }}</span>
+        </li>
+        <li *ngIf="pagination.next !== null">
+            <a class="pagination-link" [routerLink]="'/' + pagination.prefix + '/page/' + pagination.next">{{ pagination.next }}</a>
+        </li>
+        <li>
+            <a class="pagination-link" [routerLink]="'/' + pagination.prefix + '/page/' + pagination.last">LAST</a>
+        </li>
+    </ul>
+</nav>

@@ -1,0 +1,9 @@
+nav ul {
+    justify-content: center;
+}
+nav ul li {
+    margin: 0 16px;
+}
+.pagination-link:not(.is-current) {
+    color: #3273dc;
+}
