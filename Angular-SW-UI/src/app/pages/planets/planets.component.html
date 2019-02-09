@@ -1,0 +1,6 @@
+<app-pagination [data]="pagination"></app-pagination>
+
+<div *ngFor="let planet of getData()" class="columns">
+    <app-planet-item *ngIf="planet[0]" [planet]="planet[0]" class="column"></app-planet-item>
+    <app-planet-item *ngIf="planet[1]" [planet]="planet[1]" class="column"></app-planet-item>
+</div>
