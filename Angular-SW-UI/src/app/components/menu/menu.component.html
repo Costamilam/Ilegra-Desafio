@@ -1,0 +1,12 @@
+<div class="dropdown is-hoverable">
+    <div class="dropdown-trigger">
+        <i class="fas fa-ellipsis-v"></i>
+    </div>
+    <div class="dropdown-menu" id="dropdown-menu">
+        <div class="dropdown-content">
+            <a *ngFor="let link of links" [routerLink]="'/' + link.prefix + '/' + link.link" class="dropdown-item is-uppercase">
+                {{ link.name }}
+            </a>
+        </div>
+    </div>
+</div>
