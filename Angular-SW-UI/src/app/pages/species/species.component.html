@@ -1,0 +1,6 @@
+<app-pagination [data]="pagination"></app-pagination>
+
+<div *ngFor="let specie of getData()" class="columns">
+    <app-specie-item *ngIf="specie[0]" [specie]="specie[0]" class="column"></app-specie-item>
+    <app-specie-item *ngIf="specie[1]" [specie]="specie[1]" class="column"></app-specie-item>
+</div>
