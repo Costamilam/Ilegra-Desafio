@@ -65,13 +65,12 @@ public final class Data {
             "Amount of clients: %s\nAmount of salesman: %s\nID of the most expensive sale: %s\nWorst salesman ever: %s",
             Data.amountOfClients,
             Data.amountOfSalesman,
-            Data.mostExpensiveSale.saleId,
+            Data.mostExpensiveSale == null ? "" : Data.mostExpensiveSale.saleId,
             Data.getWorstSalesmanEver()
         );
     }
 
     public static String getWorstSalesmanEver() {
-        System.out.println(Data.salesman);
         String name = "";
 
         int worstValue = -1;
