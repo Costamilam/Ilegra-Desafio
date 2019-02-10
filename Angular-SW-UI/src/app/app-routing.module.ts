@@ -46,11 +46,7 @@ const routes: Routes = [
     { path: 'character/:id', component: CharacterComponent },
     { path: 'characters/:id', component: CharactersComponent },
     { path: 'characters/page/:page', component: CharactersComponent },
-    { path: 'characters', redirectTo: 'characters/page/1' },
-    { path: 'people/:id', redirectTo: 'character/:id' },
-    { path: 'people/:id', redirectTo: 'characters/:id' },
-    { path: 'people/page/:page', redirectTo: 'characters/page/:page' },
-    { path: 'people', redirectTo: 'characters' }
+    { path: 'characters', redirectTo: 'characters/page/1' }
 ];
 
 @NgModule({
