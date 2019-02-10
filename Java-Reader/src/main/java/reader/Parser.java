@@ -13,9 +13,11 @@ public final class Parser {
     public static Map<String, ArrayList<Object>> file(File file) throws IllegalAccessException, InvocationTargetException, NoSuchMethodException, IOException {
         String content = new String(Files.readAllBytes(Paths.get(file.getPath())), Env.FILE_ENCODING);
 
-        Parser.parseToObject(content);
+        if (!content.trim().isEmpty()) {
+            Parser.parseToObject(content);
+        }
 
-        return App.data;
+        return Data.data;
     }
 
     public static Object getObject(Map dictionary) throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
@@ -25,11 +27,11 @@ public final class Parser {
     }
 
     public static void addObject(String key, Object object) {
-        ArrayList<Object> list = App.data.get(key);
+        ArrayList<Object> list = Data.data.get(key);
 
         list.add(object);
 
-        App.data.put(key, list);
+        Data.data.put(key, list);
     }
 
     public static void parseToObject(String content) throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
@@ -39,6 +41,8 @@ public final class Parser {
             String[] columns = line.split(Env.COLUMN_SEPARATOR);
             
             Map dictionary = createDictionary(columns);
+
+            //System.out.format("\nDic: %s", dictionary);
 
             addObject(dictionary.get("id").toString(), getObject(dictionary));
         }
