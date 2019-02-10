@@ -23,12 +23,6 @@ public final class Sale {
     }
 
     public static Sale asDictionary(Map<String, ?> dictionary) {
-        // ArrayList<Item> items = new ArrayList<Item>();
-
-        // for (Map<String, String> item : (ArrayList<Map<String, String>>) dictionary.get("items")) {
-        //     items.add(Item.asDictionary(item));
-        // }
-
         return new Sale(
             Integer.parseInt(dictionary.get("saleId").toString()),
             (ArrayList<Item>) dictionary.get("items"),
