@@ -30,18 +30,6 @@ public class WatchDir {
     private void register(Path dir) throws IOException {
         WatchKey key = dir.register(watcher, StandardWatchEventKinds.ENTRY_CREATE, StandardWatchEventKinds.ENTRY_DELETE, StandardWatchEventKinds.ENTRY_MODIFY);
 
-        if (trace) {
-            Path prev = keys.get(key);
-
-            if (prev == null) {
-                System.out.format("register: %s\n", dir);
-            } else {
-                if (!dir.equals(prev)) {
-                    System.out.format("update: %s -> %s\n", prev, dir);
-                }
-            }
-        }
-
         keys.put(key, dir);
     }
 
@@ -76,8 +64,6 @@ public class WatchDir {
             Path dir = keys.get(key);
 
             if (dir == null) {
-                System.err.println("WatchKey not recognized!!");
-
                 continue;
             }
 
@@ -95,9 +81,6 @@ public class WatchDir {
                 Path name = ev.context();
 
                 Path child = dir.resolve(name);
-
-                // print out event
-                System.out.format("%s: %s\n", kind.name(), child);
 
                 if (kind == StandardWatchEventKinds.ENTRY_CREATE) {
                     callbackCreate.invoke(null, child.toFile());
