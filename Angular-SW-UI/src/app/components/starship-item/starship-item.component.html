@@ -1,10 +1,10 @@
-<article *ngIf="starship" class="tile is-ancestor is-vertical">
+<article *ngIf="starship">
     <app-menu [data]="starship"></app-menu>
 
     <h1 class="title is-2 has-text-centered has-text-danger">{{ starship.name }}</h1>
 
-    <div class="tile is-parent">
-        <section class="tile is-vertical">
+    <div class="columns">
+        <section class="column">
             <p>
                 <span class="has-text-weight-bold">Model: </span>
                 <span>{{ starship.model }}</span>
@@ -30,8 +30,8 @@
                 <span>{{ starship.consumables }}</span>
             </p>
         </section>
-
-        <section class="tile is-4 is-vertical">
+    
+        <section class="column">
             <p>
                 <span class="has-text-weight-bold">Cost: </span>
                 <span>{{ starship.cost_in_credits }}</span>
