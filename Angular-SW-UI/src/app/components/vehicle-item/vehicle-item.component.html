@@ -1,10 +1,10 @@
-<article *ngIf="vehicle" class="tile is-ancestor is-vertical">
+<article *ngIf="vehicle">
     <app-menu [data]="vehicle"></app-menu>
 
     <h1 class="title is-2 has-text-centered has-text-danger">{{ vehicle.name }}</h1>
 
-    <div class="tile is-parent">
-        <section class="tile is-vertical">
+    <div class="columns">
+        <section class="column">
             <p>
                 <span class="has-text-weight-bold">Model: </span>
                 <span>{{ vehicle.model }}</span>
@@ -27,7 +27,7 @@
             </p>
         </section>
 
-        <section class="tile is-vertical">
+        <section class="column">
             <p>
                 <span class="has-text-weight-bold">Max Atmosphering Speed: </span>
                 <span>{{ vehicle.max_atmosphering_speed }}</span>

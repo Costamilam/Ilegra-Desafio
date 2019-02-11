@@ -1,5 +1,5 @@
-<article *ngIf="film" [ngClass]="{'reverse': reverse}" class="tile is-ancestor">
-    <section class="tile is-6 is-vertical">
+<article *ngIf="film" [ngClass]="{'reverse': reverse}" class="columns">
+    <section class="column is-flex">
         <app-menu [data]="film"></app-menu>
         
         <h2 class="subtitle is-3 has-text-centered has-text-danger">Episode {{film.episode_id}}</h2>
@@ -19,7 +19,7 @@
         <p class="has-text-centered">{{ film.release_date }}</p>
     </section>
 
-    <section class="tile is-6">
+    <section class="column">
         <p class="has-text-justified">{{ film.opening_crawl }}</p>
     </section>
 </article>
