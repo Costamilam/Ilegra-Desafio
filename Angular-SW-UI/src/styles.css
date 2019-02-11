@@ -17,14 +17,7 @@ body {
 }
 
 article {
-    padding: 96px 16px;
-}
-article.reverse {
-    flex-direction: row-reverse;
-}
-section {
-    justify-content: space-between;
-    padding: 32px;
+    padding: 5rem 0;
 }
 
 app-menu {
